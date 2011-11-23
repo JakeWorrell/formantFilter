@@ -41,17 +41,17 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\tmp\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release/again\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Debug\tmp\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>../../vstsdk2.4/;../../dspfilters/shared/DSPFilters/include/%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;AGAIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PrecompiledHeaderOutputFile>.\Debug/again/again.pch</PrecompiledHeaderOutputFile>
@@ -60,8 +60,11 @@
       <ProgramDataBaseFileName>.\Debug/again/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
     <Link>
       <OutputFile>Debug\FormantPlugin.dll</OutputFile>
@@ -90,28 +93,28 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../../..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../vstsdk2.4/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;AGAIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <PrecompiledHeaderOutputFile>.\Release/again/again.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/again/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/again/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/again/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>.\Debug/again/again.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/again/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/again/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/again/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
-      <OutputFile>.\Release/again.dll</OutputFile>
+      <OutputFile>.\Debug\formantPluginRelease.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>..\win\vstplug.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>.\Release/again.pdb</ProgramDatabaseFile>
-      <ImportLibrary>.\Release/again.lib</ImportLibrary>
+      <ModuleDefinitionFile>..\..\vstsdk2.4\vstplug.def</ModuleDefinitionFile>
+      <ProgramDatabaseFile>.\Debug/again.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\Debug/formant.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <Midl>
@@ -133,10 +136,10 @@
     <ClInclude Include="..\..\..\..\pluginterfaces\vst2.x\aeffectx.h" />
     <ClInclude Include="..\..\..\..\pluginterfaces\vst2.x\vstfxstore.h" />
     <ClInclude Include="source\formant.h" />
+    <ClInclude Include="source\StateVariableFilter.h" />
     <ClInclude Include="source\vst2.x\aeffeditor.h" />
     <ClInclude Include="source\vst2.x\audioeffect.h" />
     <ClInclude Include="source\vst2.x\audioeffectx.h" />
-    <ClInclude Include="StateVariableFilter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\formant.cpp">
@@ -148,6 +151,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;AGAIN_EXPORTS</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="source\StateVariableFilter.cpp" />
     <ClCompile Include="source\vst2.x\audioeffect.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -175,7 +179,6 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;AGAIN_EXPORTS</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="StateVariableFilter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\win\vstplug.def" />

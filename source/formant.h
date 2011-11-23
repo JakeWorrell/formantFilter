@@ -44,11 +44,7 @@ public:
 
 protected:
 	float fGain;
-	float low;
-	float high;
-	float peak;
-	float band;
-	float notch;
+	StateVariableFilter *filter[3];
 	char programName[kVstMaxProgNameLen + 1];
 };
 

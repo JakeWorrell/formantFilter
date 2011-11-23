@@ -1,21 +1,30 @@
-﻿Build started 23/11/2011 19:31:30.
+﻿Build started 23/11/2011 23:15:18.
      1>Project "C:\Users\Jake\Desktop\VST Dev\my projects\formant\again.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching ".\Debug\tmp\FormantPlugin.unsuccessfulbuild".
+         Creating ".\Debug\tmp\FormantPlugin.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../vstsdk2.4/ /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /D _USRDLL /D AGAIN_EXPORTS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/again/" /Fd".\Debug/again/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt source\formant.cpp
+         formant.cpp
+     1>C:\Users\Jake\Desktop\VST Dev\vstsdk2.4\pluginterfaces/vst2.x/aeffect.h(296): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
+     1>C:\Users\Jake\Desktop\VST Dev\vstsdk2.4\pluginterfaces/vst2.x/aeffect.h(306): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : see declaration of 'strncat'
+     1>source\formant.cpp(61): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>source\formant.cpp(62): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>source\formant.cpp(63): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
          All outputs are up-to-date.
-         All outputs are up-to-date.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\Jake\Desktop\VST Dev\my projects\formant\.\Debug\FormantPlugin.dll) does not match the Linker's OutputFile property value (C:\Users\Jake\Desktop\VST Dev\my projects\formant\Debug\formantPluginRelease.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(FormantPlugin) does not match the Linker's OutputFile property value (formantPluginRelease). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\FormantPlugin.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"..\..\vstsdk2.4\vstplug.def" /MANIFEST /ManifestFile:".\Debug\tmp\FormantPlugin.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/again.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/again.lib" /MACHINE:X86 /DLL .\Debug/again/formant.obj
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\formantPluginRelease.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"..\..\vstsdk2.4\vstplug.def" /MANIFEST /ManifestFile:".\Debug\tmp\FormantPlugin.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Debug/again.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/formant.lib" /MACHINE:X86 /DLL .\Debug/again/formant.obj
+         .\Debug/again/StateVariableFilter.obj
          .\Debug/again/audioeffect.obj
          .\Debug/again/audioeffectx.obj
          .\Debug/again/vstplugmain.obj
-         .\Debug/again/StateVariableFilter.obj
-     1>formant.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
-            Creating library .\Debug/again.lib and object .\Debug/again.exp
+            Creating library .\Debug/formant.lib and object .\Debug/formant.exp
          again.vcxproj -> C:\Users\Jake\Desktop\VST Dev\my projects\formant\.\Debug\FormantPlugin.dll
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Debug\FormantPlugin.dll;#2" /manifest .\Debug\tmp\FormantPlugin.dll.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Debug\formantPluginRelease.dll;#2" /manifest .\Debug\tmp\FormantPlugin.dll.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file ".\Debug\tmp\FormantPlugin.unsuccessfulbuild".
          Touching ".\Debug\tmp\FormantPlugin.lastbuildstate".
@@ -23,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.57
+Time Elapsed 00:00:00.65

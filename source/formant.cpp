@@ -9,10 +9,8 @@
 //
 // © 2006, Steinberg Media Technologies, All Rights Reserved
 //-------------------------------------------------------------------------------------------------------
+#include "StateVariableFilter.h"
 #include "formant.h"
-#include <math.h>
-#include <algorithm>
-using namespace std;
 //-------------------------------------------------------------------------------------------------------
 AudioEffect* createEffectInstance (audioMasterCallback audioMaster)
 {
@@ -30,11 +28,11 @@ AGain::AGain (audioMasterCallback audioMaster)
 	canDoubleReplacing ();	// supports double precision processing
 
 	fGain = 1.f;			// default to 0 dB
-	low = 0;
-	high = 0;
-	peak = 0;
-	band = 0;
-	notch = 0;
+
+	filter[0]= new StateVariableFilter(800);
+	filter[1]= new StateVariableFilter(1150);
+	filter[2]= new StateVariableFilter(2900);
+
 	vst_strncpy (programName, "Default", kVstMaxProgNameLen);	// default program name
 }
 
@@ -60,6 +58,9 @@ void AGain::getProgramName (char* name)
 void AGain::setParameter (VstInt32 index, float value)
 {
 	fGain = value;
+	filter[0]->setCutoff(350*(1-value)+800*value);
+	filter[1]->setCutoff(2000*(1-value)+1150*value);
+	filter[2]->setCutoff(2800*(1-value)+2900*value);
 }
 
 //-----------------------------------------------------------------------------------------
@@ -116,12 +117,7 @@ VstInt32 AGain::getVendorVersion ()
 //-----------------------------------------------------------------------------------------
 void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames)
 {
-	float fc = fGain * 10000; //cutoff
-	float fs =44100; //sampling freq
-	float res =.9; 
-	float freq   = 2.0*sin(3.14159265358979323846*min(0.25f, fc/(fs*2)));  // the fs*2 is because it's double sampled
-	float damp   = min(2.0*(1.0 - pow(res, 0.25f)), min(2.0, 2.0/freq - freq*0.5));
-	float drive = 0;
+	
 
 	float* in1  =  inputs[0];
     float* in2  =  inputs[1];
@@ -130,22 +126,15 @@ void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFr
 
 	float out=0;
 	float in=0;
+
     while (--sampleFrames >= 0)
     {
 		in=(*in1++);
-		notch =  in - damp*band;
-		low   = low + freq*band;
-		high  = notch - low;
-		band  = freq*high + band - drive*band*band*band;
-		out   = 0.5*band;//(notch or low or high or band or peak);
-		notch = in - damp*band;
-		low   = low + freq*band;
-		high  = notch - low;
-		band  = freq*high + band - drive*band*band*band;
-		out  += 0.5*band;//(same out as above);
+        out = filter[0]->process(in);
+		out += filter[1]->process(in);
+		out += filter[2]->process(in);
 
-        (*out1++) = out;
-		
+		(*out1++) = out;
     }
 }
 

@@ -33,7 +33,7 @@
     <ClInclude Include="source\formant.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="StateVariableFilter.h">
+    <ClInclude Include="source\StateVariableFilter.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClCompile Include="source\formant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StateVariableFilter.cpp">
+    <ClCompile Include="source\StateVariableFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
