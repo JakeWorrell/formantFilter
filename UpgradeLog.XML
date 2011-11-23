@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="samples">
+</Property><Property Name="Solution File" Value="C:\Users\Jake\Desktop\VST Dev\my projects\formant\samples.sln">
+</Property><Property Name="Date" Value="22 November 2011">
+</Property><Property Name="Time" Value="18:49">
+</Property></Properties><Event ErrorLevel="3" Project="adelay" Source="adelay.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="again" Source="again.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="drawtest" Source="..\..\..\..\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj" Description="Converting project file 'C:\Users\Jake\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj'.">
+</Event><Event ErrorLevel="2" Project="drawtest" Source="..\..\..\..\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj" Description="File 'C:\Users\Jake\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj' was not found.">
+</Event><Event ErrorLevel="2" Project="drawtest" Source="..\..\..\..\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj" Description="Project upgrade failed.">
+</Event><Event ErrorLevel="3" Project="drawtest" Source="..\..\..\..\VSTGUI.SF\DRAWTEST\WIN.VC6\drawtest.vcproj" Description="Not Converted">
+</Event><Event ErrorLevel="3" Project="minihost" Source="minihost.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="surrounddelay" Source="surrounddelay.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="vstxsynth" Source="vstxsynth.vcxproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="samples.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="samples.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

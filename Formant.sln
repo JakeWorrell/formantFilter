@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FormantPlugin", "again.vcxproj", "{1661F581-BBEA-CB67-98AE-1F4B97493AB9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSPFilters", "..\..\dspfilters\shared\DSPFilters\Builds\VisualStudio2010\DSPFilters.vcxproj", "{A34C661C-A167-4B61-8086-54957C90E800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1661F581-BBEA-CB67-98AE-1F4B97493AB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1661F581-BBEA-CB67-98AE-1F4B97493AB9}.Release|Win32.ActiveCfg = Release|Win32
+		{A34C661C-A167-4B61-8086-54957C90E800}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A34C661C-A167-4B61-8086-54957C90E800}.Debug|Win32.Build.0 = Debug|Win32
+		{A34C661C-A167-4B61-8086-54957C90E800}.Release|Win32.ActiveCfg = Release|Win32
+		{A34C661C-A167-4B61-8086-54957C90E800}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

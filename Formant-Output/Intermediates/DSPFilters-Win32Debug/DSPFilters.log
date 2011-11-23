@@ -1,0 +1,53 @@
+﻿Build started 22/11/2011 20:05:07.
+     1>Project "C:\Users\Jake\Desktop\VST Dev\dspfilters\shared\DSPFilters\Builds\VisualStudio2010\DSPFilters.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\DSPFilters.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\DSPFilters.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /Gm- /EHsc /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\\" /Fd"C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\source\Bessel.cpp ..\..\source\Biquad.cpp ..\..\source\Butterworth.cpp ..\..\source\Cascade.cpp ..\..\source\ChebyshevI.cpp ..\..\source\ChebyshevII.cpp ..\..\source\Custom.cpp ..\..\source\Design.cpp ..\..\source\Documentation.cpp ..\..\source\Elliptic.cpp ..\..\source\Filter.cpp ..\..\source\Legendre.cpp ..\..\source\Param.cpp ..\..\source\PoleFilter.cpp ..\..\source\RBJ.cpp ..\..\source\RootFinder.cpp ..\..\source\State.cpp
+         Bessel.cpp
+         Biquad.cpp
+         Butterworth.cpp
+         Cascade.cpp
+         ChebyshevI.cpp
+         ChebyshevII.cpp
+         Custom.cpp
+         Design.cpp
+         Documentation.cpp
+         Elliptic.cpp
+         Filter.cpp
+         Legendre.cpp
+         Param.cpp
+         PoleFilter.cpp
+         RBJ.cpp
+         RootFinder.cpp
+         State.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Products\Win32Debug\DSPFilters.lib" /NOLOGO "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Bessel.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Biquad.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Butterworth.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Cascade.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\ChebyshevI.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\ChebyshevII.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Custom.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Design.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Documentation.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Elliptic.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Filter.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Legendre.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\Param.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\PoleFilter.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\RBJ.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\RootFinder.obj"
+         "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\State.obj"
+     1>Design.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+         DSPFilters.vcxproj -> C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Products\Win32Debug\DSPFilters.lib
+       FinalizeBuildStatus:
+         Deleting file "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\DSPFilters.unsuccessfulbuild".
+         Touching "C:\Users\Jake\Desktop\VST Dev\my projects\formant\Formant-Output\Intermediates\DSPFilters-Win32Debug\DSPFilters.lastbuildstate".
+     1>Done Building Project "C:\Users\Jake\Desktop\VST Dev\dspfilters\shared\DSPFilters\Builds\VisualStudio2010\DSPFilters.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.46
