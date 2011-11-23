@@ -1,24 +1,16 @@
-﻿Build started 23/11/2011 18:47:47.
+﻿Build started 23/11/2011 19:31:30.
      1>Project "C:\Users\Jake\Desktop\VST Dev\my projects\formant\again.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating ".\Debug\tmp\FormantPlugin.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching ".\Debug\tmp\FormantPlugin.unsuccessfulbuild".
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../vstsdk2.4/ /I../../dspfilters/shared/DSPFilters/include/ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /D _USRDLL /D AGAIN_EXPORTS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/again/" /Fd".\Debug/again/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt source\formant.cpp
-         formant.cpp
-     1>c:\users\jake\desktop\vst dev\vstsdk2.4\pluginterfaces\vst2.x\aeffect.h(296): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : see declaration of 'strncpy'
-     1>c:\users\jake\desktop\vst dev\vstsdk2.4\pluginterfaces\vst2.x\aeffect.h(306): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(175) : see declaration of 'strncat'
-     1>c:\users\jake\desktop\vst dev\my projects\formant\source\formant.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\users\jake\desktop\vst dev\my projects\formant\source\formant.cpp(122): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\jake\desktop\vst dev\my projects\formant\source\formant.cpp(123): warning C4244: 'initializing' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\users\jake\desktop\vst dev\my projects\formant\source\formant.cpp(140): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\jake\desktop\vst dev\my projects\formant\source\formant.cpp(145): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+         All outputs are up-to-date.
+         All outputs are up-to-date.
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\FormantPlugin.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "Formant-Output\Products\Win32Debug\DSPFilters.lib" /DEF:"..\..\vstsdk2.4\vstplug.def" /MANIFEST /ManifestFile:".\Debug\tmp\FormantPlugin.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/again.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/again.lib" /MACHINE:X86 /DLL .\Debug/again/formant.obj
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\FormantPlugin.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"..\..\vstsdk2.4\vstplug.def" /MANIFEST /ManifestFile:".\Debug\tmp\FormantPlugin.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/again.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug/again.lib" /MACHINE:X86 /DLL .\Debug/again/formant.obj
          .\Debug/again/audioeffect.obj
          .\Debug/again/audioeffectx.obj
          .\Debug/again/vstplugmain.obj
+         .\Debug/again/StateVariableFilter.obj
      1>formant.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
             Creating library .\Debug/again.lib and object .\Debug/again.exp
          again.vcxproj -> C:\Users\Jake\Desktop\VST Dev\my projects\formant\.\Debug\FormantPlugin.dll
@@ -31,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.10
+Time Elapsed 00:00:00.57
