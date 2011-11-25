@@ -31,7 +31,8 @@ AGain::AGain (audioMasterCallback audioMaster)
 
 	filter[0]= new StateVariableFilter(800);
 	filter[1]= new StateVariableFilter(1150);
-	filter[2]= new StateVariableFilter(2900);
+	filter[2]= new StateVariableFilter(800);
+	filter[3]= new StateVariableFilter(1150);
 
 	vst_strncpy (programName, "Default", kVstMaxProgNameLen);	// default program name
 }
@@ -60,7 +61,8 @@ void AGain::setParameter (VstInt32 index, float value)
 	fGain = value;
 	filter[0]->setCutoff(350*(1-value)+800*value);
 	filter[1]->setCutoff(2000*(1-value)+1150*value);
-	filter[2]->setCutoff(2800*(1-value)+2900*value);
+	filter[2]->setCutoff(350*(1-value)+800*value);
+	filter[3]->setCutoff(2000*(1-value)+1150*value);
 }
 
 //-----------------------------------------------------------------------------------------
@@ -117,24 +119,27 @@ VstInt32 AGain::getVendorVersion ()
 //-----------------------------------------------------------------------------------------
 void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames)
 {
-	
-
 	float* in1  =  inputs[0];
     float* in2  =  inputs[1];
     float* out1 = outputs[0];
     float* out2 = outputs[1];
 
-	float out=0;
-	float in=0;
+	float outA=0;
+	float outB=0;
+	float inA=0;
+	float inB=0;
 
     while (--sampleFrames >= 0)
     {
-		in=(*in1++);
-        out = filter[0]->process(in);
-		out += filter[1]->process(in);
-		out += filter[2]->process(in);
+		inA=(*in1++);
+		inB=(*in2++);
+        outA = filter[0]->process(inA);
+		outA += filter[1]->process(inA);
+		outB = filter[2]->process(inB);
+		outB += filter[3]->process(inB);
 
-		(*out1++) = out;
+		(*out1++) = outA;
+		(*out2++) = outB;
     }
 }
 

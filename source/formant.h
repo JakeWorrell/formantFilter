@@ -44,7 +44,7 @@ public:
 
 protected:
 	float fGain;
-	StateVariableFilter *filter[3];
+	StateVariableFilter *filter[4];
 	char programName[kVstMaxProgNameLen + 1];
 };
 

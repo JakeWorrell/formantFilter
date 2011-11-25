@@ -8,6 +8,7 @@ public:
 	float process(float in);
 
 	void setCutoff(int cutoff);
+
 private:
 	float fGain;
 	float low;
