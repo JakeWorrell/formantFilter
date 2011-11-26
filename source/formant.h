@@ -43,8 +43,8 @@ public:
 	virtual VstInt32 getVendorVersion ();
 
 protected:
-	float fGain;
-	StateVariableFilter *filter[4];
+	VstParameter *params[2];
+	StateVariableFilter *filters[4];
 	char programName[kVstMaxProgNameLen + 1];
 };
 

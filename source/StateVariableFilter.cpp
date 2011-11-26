@@ -13,9 +13,11 @@ StateVariableFilter::StateVariableFilter(int cutoff)
 	fs    = 44100; //sampling freq
 	res   =.9; 
 	setCutoff(cutoff);
-	drive = 0;
 }
-
+/**
+ * based on http://www.musicdsp.org/archive.php?classid=3#92
+ * removed drive though
+ */
 float StateVariableFilter::process(float input)
 {
 	if (input == 0){
@@ -27,12 +29,12 @@ float StateVariableFilter::process(float input)
 	notch =  input - damp*band;
 	low   = low + freq*band;
 	high  = notch - low;
-	band  = freq*high + band - drive*band*band*band;
+	band  = freq*high + band;
 	out   = 0.5*band;//(notch or low or high or band or peak);
 	notch = input - damp*band;
 	low   = low + freq*band;
 	high  = notch - low;
-	band  = freq*high + band - drive*band*band*band;
+	band  = freq*high + band;
 	out  += 0.5*band;//(same out as above);
 	return out;
 }

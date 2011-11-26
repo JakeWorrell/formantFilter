@@ -140,6 +140,7 @@
     <ClInclude Include="source\vst2.x\aeffeditor.h" />
     <ClInclude Include="source\vst2.x\audioeffect.h" />
     <ClInclude Include="source\vst2.x\audioeffectx.h" />
+    <ClInclude Include="source\VstParameter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\formant.cpp">
@@ -179,6 +180,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_WINDOWS;_MBCS;_USRDLL;AGAIN_EXPORTS</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="source\VstParameter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\win\vstplug.def" />

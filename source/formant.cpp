@@ -10,7 +10,10 @@
 // © 2006, Steinberg Media Technologies, All Rights Reserved
 //-------------------------------------------------------------------------------------------------------
 #include "StateVariableFilter.h"
+#include "VstParameter.h"
 #include "formant.h"
+
+enum {pPosition, pVowelA};
 //-------------------------------------------------------------------------------------------------------
 AudioEffect* createEffectInstance (audioMasterCallback audioMaster)
 {
@@ -19,20 +22,21 @@ AudioEffect* createEffectInstance (audioMasterCallback audioMaster)
 
 //-------------------------------------------------------------------------------------------------------
 AGain::AGain (audioMasterCallback audioMaster)
-: AudioEffectX (audioMaster, 1, 1)	// 1 program, 1 parameter only
+: AudioEffectX (audioMaster, 1,2)	// 1 program, 1 parameter only
 {
 	setNumInputs (2);		// stereo in
 	setNumOutputs (2);		// stereo out
-	setUniqueID ('Gain');	// identify
+	setUniqueID ('ijnh');	// identify
 	canProcessReplacing ();	// supports replacing output
 	canDoubleReplacing ();	// supports double precision processing
 
-	fGain = 1.f;			// default to 0 dB
+	params[pPosition] = new VstParameter("Position", 1.f);
+	params[pVowelA] = new VstParameter("VowelA", 1.f);
 
-	filter[0]= new StateVariableFilter(800);
-	filter[1]= new StateVariableFilter(1150);
-	filter[2]= new StateVariableFilter(800);
-	filter[3]= new StateVariableFilter(1150);
+	filters[0]= new StateVariableFilter(800);
+	filters[1]= new StateVariableFilter(1150);
+	filters[2]= new StateVariableFilter(800);
+	filters[3]= new StateVariableFilter(1150);
 
 	vst_strncpy (programName, "Default", kVstMaxProgNameLen);	// default program name
 }
@@ -58,35 +62,35 @@ void AGain::getProgramName (char* name)
 //-----------------------------------------------------------------------------------------
 void AGain::setParameter (VstInt32 index, float value)
 {
-	fGain = value;
-	filter[0]->setCutoff(350*(1-value)+800*value);
-	filter[1]->setCutoff(2000*(1-value)+1150*value);
-	filter[2]->setCutoff(350*(1-value)+800*value);
-	filter[3]->setCutoff(2000*(1-value)+1150*value);
+	params[index]->setValue(value);
+	filters[0]->setCutoff(350*(1-value)+800*value);
+	filters[1]->setCutoff(2000*(1-value)+1150*value);
+	filters[2]->setCutoff(350*(1-value)+800*value);
+	filters[3]->setCutoff(2000*(1-value)+1150*value);
 }
 
 //-----------------------------------------------------------------------------------------
 float AGain::getParameter (VstInt32 index)
 {
-	return fGain;
+	return params[index]->getValue();
 }
 
 //-----------------------------------------------------------------------------------------
 void AGain::getParameterName (VstInt32 index, char* label)
 {
-	vst_strncpy (label, "Gain", kVstMaxParamStrLen);
+	vst_strncpy (label, params[index]->getNameChar(), kVstMaxParamStrLen);
 }
 
 //-----------------------------------------------------------------------------------------
 void AGain::getParameterDisplay (VstInt32 index, char* text)
 {
-	dB2string (fGain, text, kVstMaxParamStrLen);
+	dB2string (params[index]->getValue(), text, kVstMaxParamStrLen);
 }
 
 //-----------------------------------------------------------------------------------------
 void AGain::getParameterLabel (VstInt32 index, char* label)
 {
-	vst_strncpy (label, "dB", kVstMaxParamStrLen);
+	vst_strncpy (label, "%", kVstMaxParamStrLen);
 }
 
 //------------------------------------------------------------------------
@@ -133,10 +137,10 @@ void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFr
     {
 		inA=(*in1++);
 		inB=(*in2++);
-        outA = filter[0]->process(inA);
-		outA += filter[1]->process(inA);
-		outB = filter[2]->process(inB);
-		outB += filter[3]->process(inB);
+        outA = filters[0]->process(inA);
+		outA += filters[1]->process(inA);
+		outB = filters[2]->process(inB);
+		outB += filters[3]->process(inB);
 
 		(*out1++) = outA;
 		(*out2++) = outB;

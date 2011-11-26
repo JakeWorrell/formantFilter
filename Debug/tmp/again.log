@@ -1,4 +1,4 @@
-﻿Build started 25/11/2011 22:44:27.
+﻿Build started 26/11/2011 23:06:56.
      1>Project "C:\Users\Jake\Desktop\VST Dev\my projects\formant\again.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Debug\tmp\FormantPlugin.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -9,18 +9,11 @@
                  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
      1>C:\Users\Jake\Desktop\VST Dev\vstsdk2.4\pluginterfaces/vst2.x/aeffect.h(306): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(175) : see declaration of 'strncat'
-     1>source\formant.cpp(62): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>source\formant.cpp(63): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>source\formant.cpp(64): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>source\formant.cpp(65): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../vstsdk2.4/ /Zi /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D AGAIN_EXPORTS /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/again/" /Fd".\Debug/again/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt source\StateVariableFilter.cpp
-         StateVariableFilter.cpp
-     1>source\StateVariableFilter.cpp(14): warning C4305: '=' : truncation from 'double' to 'float'
-     1>source\StateVariableFilter.cpp(31): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>source\StateVariableFilter.cpp(36): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>source\StateVariableFilter.cpp(46): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>source\StateVariableFilter.cpp(47): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>source\StateVariableFilter.cpp(48): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>source\formant.cpp(66): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>source\formant.cpp(67): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>source\formant.cpp(68): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>source\formant.cpp(69): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         All outputs are up-to-date.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\Jake\Desktop\VST Dev\my projects\formant\.\Debug\FormantPlugin.dll) does not match the Linker's OutputFile property value (C:\Users\Jake\Desktop\VST Dev\my projects\formant\Debug\formantPluginRelease.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(FormantPlugin) does not match the Linker's OutputFile property value (formantPluginRelease). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
        Link:
@@ -29,6 +22,7 @@
          .\Debug/again/audioeffect.obj
          .\Debug/again/audioeffectx.obj
          .\Debug/again/vstplugmain.obj
+         .\Debug/again/VstParameter.obj
             Creating library .\Debug/formant.lib and object .\Debug/formant.exp
          again.vcxproj -> C:\Users\Jake\Desktop\VST Dev\my projects\formant\.\Debug\FormantPlugin.dll
        Manifest:
@@ -40,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.40
+Time Elapsed 00:00:01.60
