@@ -3,7 +3,7 @@
 // Version 2.4		$Date: 2006/11/13 09:08:27 $
 //
 // Category     : VST 2.x SDK Samples
-// Filename     : again.cpp
+// Filename     : FormantPlugin.cpp
 // Created by   : Steinberg Media Technologies
 // Description  : Stereo plugin which applies Gain [-oo, 0dB]
 //
@@ -17,11 +17,11 @@ enum {pPosition, pVowelA};
 //-------------------------------------------------------------------------------------------------------
 AudioEffect* createEffectInstance (audioMasterCallback audioMaster)
 {
-	return new AGain (audioMaster);
+	return new FormantPlugin (audioMaster);
 }
 
 //-------------------------------------------------------------------------------------------------------
-AGain::AGain (audioMasterCallback audioMaster)
+FormantPlugin::FormantPlugin (audioMasterCallback audioMaster)
 : AudioEffectX (audioMaster, 1,2)	// 1 program, 1 parameter only
 {
 	setNumInputs (2);		// stereo in
@@ -42,25 +42,25 @@ AGain::AGain (audioMasterCallback audioMaster)
 }
 
 //-------------------------------------------------------------------------------------------------------
-AGain::~AGain ()
+FormantPlugin::~FormantPlugin ()
 {
 	// nothing to do here
 }
 
 //-------------------------------------------------------------------------------------------------------
-void AGain::setProgramName (char* name)
+void FormantPlugin::setProgramName (char* name)
 {
 	vst_strncpy (programName, name, kVstMaxProgNameLen);
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::getProgramName (char* name)
+void FormantPlugin::getProgramName (char* name)
 {
 	vst_strncpy (name, programName, kVstMaxProgNameLen);
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::setParameter (VstInt32 index, float value)
+void FormantPlugin::setParameter (VstInt32 index, float value)
 {
 	params[index]->setValue(value);
 	filters[0]->setCutoff(350*(1-value)+800*value);
@@ -70,58 +70,58 @@ void AGain::setParameter (VstInt32 index, float value)
 }
 
 //-----------------------------------------------------------------------------------------
-float AGain::getParameter (VstInt32 index)
+float FormantPlugin::getParameter (VstInt32 index)
 {
 	return params[index]->getValue();
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::getParameterName (VstInt32 index, char* label)
+void FormantPlugin::getParameterName (VstInt32 index, char* label)
 {
 	vst_strncpy (label, params[index]->getNameChar(), kVstMaxParamStrLen);
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::getParameterDisplay (VstInt32 index, char* text)
+void FormantPlugin::getParameterDisplay (VstInt32 index, char* text)
 {
 	dB2string (params[index]->getValue(), text, kVstMaxParamStrLen);
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::getParameterLabel (VstInt32 index, char* label)
+void FormantPlugin::getParameterLabel (VstInt32 index, char* label)
 {
 	vst_strncpy (label, "%", kVstMaxParamStrLen);
 }
 
 //------------------------------------------------------------------------
-bool AGain::getEffectName (char* name)
+bool FormantPlugin::getEffectName (char* name)
 {
 	vst_strncpy (name, "Gain", kVstMaxEffectNameLen);
 	return true;
 }
 
 //------------------------------------------------------------------------
-bool AGain::getProductString (char* text)
+bool FormantPlugin::getProductString (char* text)
 {
 	vst_strncpy (text, "Gain", kVstMaxProductStrLen);
 	return true;
 }
 
 //------------------------------------------------------------------------
-bool AGain::getVendorString (char* text)
+bool FormantPlugin::getVendorString (char* text)
 {
 	vst_strncpy (text, "Steinberg Media Technologies", kVstMaxVendorStrLen);
 	return true;
 }
 
 //-----------------------------------------------------------------------------------------
-VstInt32 AGain::getVendorVersion ()
+VstInt32 FormantPlugin::getVendorVersion ()
 { 
 	return 1000; 
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames)
+void FormantPlugin::processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames)
 {
 	float* in1  =  inputs[0];
     float* in2  =  inputs[1];
@@ -148,7 +148,7 @@ void AGain::processReplacing (float** inputs, float** outputs, VstInt32 sampleFr
 }
 
 //-----------------------------------------------------------------------------------------
-void AGain::processDoubleReplacing (double** inputs, double** outputs, VstInt32 sampleFrames)
+void FormantPlugin::processDoubleReplacing (double** inputs, double** outputs, VstInt32 sampleFrames)
 {
     /*
 	commented out to avoid confusion

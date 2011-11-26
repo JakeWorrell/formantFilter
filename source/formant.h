@@ -3,24 +3,24 @@
 // Version 2.4		$Date: 2006/11/13 09:08:27 $
 //
 // Category     : VST 2.x SDK Samples
-// Filename     : again.h
+// Filename     : FormantPlugin.h
 // Created by   : Steinberg Media Technologies
 // Description  : Stereo plugin which applies Gain [-oo, 0dB]
 //
 // © 2006, Steinberg Media Technologies, All Rights Reserved
 //-------------------------------------------------------------------------------------------------------
 
-#ifndef __again__
-#define __again__
+#ifndef __FormantPlugin__
+#define __FormantPlugin__
 
 #include "public.sdk/source/vst2.x/audioeffectx.h"
 
 //-------------------------------------------------------------------------------------------------------
-class AGain : public AudioEffectX
+class FormantPlugin : public AudioEffectX
 {
 public:
-	AGain (audioMasterCallback audioMaster);
-	~AGain ();
+	FormantPlugin (audioMasterCallback audioMaster);
+	~FormantPlugin ();
 
 	// Processing
 	virtual void processReplacing (float** inputs, float** outputs, VstInt32 sampleFrames);

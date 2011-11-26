@@ -1,4 +1,4 @@
-﻿Build started 26/11/2011 23:06:56.
+﻿Build started 26/11/2011 23:27:02.
      1>Project "C:\Users\Jake\Desktop\VST Dev\my projects\formant\again.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Debug\tmp\FormantPlugin.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -34,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.60
+Time Elapsed 00:00:01.80
